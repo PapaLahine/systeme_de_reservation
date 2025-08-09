@@ -1,32 +1,26 @@
-# Reservation System - Demo (Ready-to-run ZIP)
+# Système de réservation de salles - Architecture & Code
+Projet minimal de démonstration pour un système de réservation de salles de classe.
+## Architecture
+- **Présentation (Controller)** : API REST exposée via Spring MVC.
+- **Service Métier** : Contient la logique métier, validation et règles.
+- **DAO (Repository)** : Spring Data JPA pour l'accès aux entités.
+- **Entités (Domain)** : JPA entities: User, Classroom, Reservation.
 
-## Prérequis
-- Java 17+ doit être installé et `JAVA_HOME` configuré.
-- Si Maven n'est pas installé, je recommande d'installer Maven ou d'ajouter le Maven Wrapper officiel (optionnel).
+## Fonctionnalités fournies
+- CRUD pour les salles et réservations (REST).
+- Validation simple (vérifie conflit de réservation).
+- Tests unitaires pour le service de réservation.
 
-## Lancer l'application
-1. Ouvre PowerShell ou CMD dans le dossier du projet (contenant `pom.xml`).
-2. Sous Windows PowerShell/CMD :
-   ```powershell
-   .\\mvnw.cmd spring-boot:run
-   ```
-   Si `mvn` est installé, tu peux aussi utiliser :
-   ```powershell
-   mvn spring-boot:run
-   ```
+## Comment utiliser
+1. Décompressez le projet.
+2. Build : `./mvnw package` ou `mvn package`
+3. Run : `java -jar target/reservation-system-1.0.0.jar`
+4. API: `http://localhost:8080/api/...`
 
-3. L'application démarre sur le port **8081**.
+## Pousser sur GitHub
+1. `git init`
+2. `git add .`
+3. `git commit -m "Initial commit - reservation system"`
+4. créer un repo GitHub et `git remote add origin git@github.com:USERNAME/repo.git`
+5. `git push -u origin main`
 
-## Endpoints
-- GET  http://localhost:8081/api/classrooms
-- GET  http://localhost:8081/api/users
-- GET  http://localhost:8081/api/reservations
-- POST http://localhost:8081/api/reservations
-
-## Tests unitaires
-```
-mvn test
-```
-
-## Remarques
-- Si tu veux le Maven Wrapper officiel (avec `.mvn/wrapper/maven-wrapper.jar`) dis-le moi — je peux l'ajouter.
